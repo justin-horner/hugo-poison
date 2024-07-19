@@ -74,65 +74,12 @@ tags: ["Hugo"]
 ---
 ```
 
-### Comments
-
-Facilitate discourse by allowing users to comment on your posts.  *Poison* currently supports two different commenting engines for this purpose -- [Disqus](https://disqus.com/) and [Remark42](https://remark42.com/).
-
-**Note**: *Enabling comments will add external dependencies.*
-
-- [Disqus Demo Site](https://about.disqus.com/disqus-demo-page) 
-- [Remark42 Demo Site](https://remark42.com/demo/)
-
-***Disqus*** is free and easy to use.  Checkout the [Hugo docs](https://gohugo.io/content-management/comments/) to get started.  Once you've created a *Disqus* account, you can activate it in the *Poison* theme by adding a single line to your `config.toml` file.
-
-```
-disqusShortname = 'yourDisqusShortname'
-```
-
-This is a great option for people that don't want to bother with self-hosting their own commenting engine; however, it has some drawbacks.  Because *Disqus* provides this service for free, they recoup any financial loss by injecting third-party ad trackers onto your website.  These trackers help to collect and sell information about your users, while also negatively affecting your site's speed.
-
-Even still, *Disqus* may be the best solution depending on your situation.  The above paragraph is only meant to highlight its trade-offs and not meant to discourage its use entirely.
-
-***Remark42*** is a lightweight, open source commenting engine that doesn't spy on your users.  The downside is that you must host it yourself.  Checkout the *Remark42* [documentation](https://remark42.com/) to get started.  I also found [this blog post](https://www.devbitsandbytes.com/setting-up-remark42-from-scratch/) helpful when setting it up on [my site](https://lukeorth.com).
-
-Once everything is set up, you can activate it in the *Poison* theme by including the following in the `[params]` section of your `config.toml` file.
-
-```toml
-[params]
-    remark42 = true
-    remark42_host = "https://yourhost.com"
-    remark42_site_id = "your_site_id"
-```
-
-### Analytics
-
-Gain insights on your users.  Poison currently supports [Plausible](https://plausible.io) which is available via a paid service or by [self-hosting](https://github.com/plausible/analytics).  Take a look at the Poison demo site's 
-
-**Note**: *Enabling analytics will add external dependencies.*
-
-#### Check out our demo site's Plausible analytics [here](https://plausible.lukeorth.com/poison.lukeorth.com)!
-
-Once you've established your Plausible instance, you can activate it by adding three lines to your ```config.toml``` file.
-
-```toml
-[params]
-    plausible = true
-    plausible_domain = "myblog.com"
-    plausible_script = "https://plausible.myblog.com/js/script.js"
-```
-
-This will insert the necessary code in the ```<head>``` on each page and will allow your Plausible instance to collect a limited set of data on your users.
-
-For reference, the configuration above would add the following code to each page.  Adjust according to your specific environment.
-
-```<script defer data-domain="myblog.com" src="https://plausible.myblog.com/js/script.js"></script>```
-
 ### Email newsletters
 
-Allow users to subscribe to your blog newsletters via email. 
+Allow users to subscribe to your blog newsletters via email.
 Poison currently supports [Listmonk](https://listmonk.app/) which is available via [self-hosting](https://github.com/knadh/listmonk).
 Listmonk is a standalone, self-hosted, newsletter and mailing list manager.
-The downside is that you must host it yourself. 
+The downside is that you must host it yourself.
 Checkout the Listmonk [documentation](https://listmonk.app/docs/) to get started.
 
 Once you've established your Listmonk instance, activate it by adding these lines to your ```config.toml``` file.
@@ -147,7 +94,7 @@ Once you've established your Listmonk instance, activate it by adding these line
     listmonk_subscription_error_message = "Something went wrong"          # default: Sorry, something went wrong. Please, try again
 ```
 
-This will insert a form at the bottom of each post's content. 
+This will insert a form at the bottom of each post's content.
 The user will be subscribed to the newsletter specified in the ``listmonk_subscription_list_uiid`` parameter.
 
 ### Series
@@ -169,13 +116,13 @@ tags: ["Hugo"]
 Make your mathematical notations pop.
 
 For notations that should appear on their own line, use the block quotes `$$ ... $$`
-    
+
 $$ 5 \times 5 = 25 $$
 
 For notations that should appear on the same line, use the inline quotes `$ ... $`
 
 **Note**: *Enabling KaTeX will add external dependencies.*
-    
+
 ### Tabs
 Some content is just better viewed in tabs.  Luckily we have a shortcode for that.
 <p float="left">
@@ -200,9 +147,9 @@ This is a code block.
 
 {{</* /tabs */>}}
 ```
- 
+
 ### Mermaid diagrams
-You can embed rendered Mermaid diagrams.  
+You can embed rendered Mermaid diagrams.
 
 **Note**: *Enabling Mermaid diagrams will add external dependencies.*
 
@@ -211,7 +158,7 @@ You can embed rendered Mermaid diagrams.
 For an example of how to do this, please visit the [Poison demo site](https://poison.lukeorth.com/posts/introducing-poison/#mermaid-diagrams).
 
 ### PlantUML diagrams
-You can embed rendered PlantUML diagrams.  
+You can embed rendered PlantUML diagrams.
 
 **Note**: *Enabling PlantUML diagrams will add external dependencies.*
 
@@ -272,13 +219,13 @@ menu = [
             # Limit:        If the files should be listed, how many should be shown.
 
         # SINGLE PAGE
-        # Note that you must put your markdown file 
+        # Note that you must put your markdown file
         # inside of a directory with the same name.
 
         # Example:
         # ... /content/about/about.md
         {Name = "About", URL = "/about/", HasChildren = false},
-        
+
         # ... /content/foo/_index.md
         # {Name = "Foo", URL = "/foo/", HasChildren = false},
 
@@ -339,7 +286,7 @@ pluralizelisttitles = false   # removes the automatically appended "s" on sideba
         {Name = "Posts", URL = "/posts/", Pre = "Recent", HasChildren = true, Limit = 5},
     ]
 
-    # Links to your socials.  Comment or delete any you don't need/use. 
+    # Links to your socials.  Comment or delete any you don't need/use.
     discord_url = "https://discord.com"
     email_url = "mailto://user@domain"
     facebook_url = "https://facebook.com"
